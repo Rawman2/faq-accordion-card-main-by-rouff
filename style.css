@@ -23,6 +23,9 @@ main {
   position: relative;
   /* overflow: hidden; */
 }
+h1 {
+  text-align: center;
+}
 .images {
   display: flex;
   transform: translateX(-30%);
@@ -50,9 +53,13 @@ header {
   justify-content: space-between;
   width: 350px;
   border-bottom: 1px solid hsl(240, 5%, 91%);
+  cursor: pointer;
 }
 .texts {
   padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 #ans1,
 #ans2,
@@ -81,23 +88,20 @@ header {
     justify-content: space-evenly;
     margin: auto;
     border-radius: 30px;
+    position: relative;
+    margin-top: 130px;
   }
   .images {
-    display: flex;
-    flex-direction: row;
-    margin: 0 auto;
+    position: absolute;
+    bottom: 85%;
+    left: 35%;
   }
   .image1 img {
     position: relative;
-    bottom: -60%;
-    right: -50%;
+    right: 30%;
+    width: 100%;
   }
   .image2 img {
-    transform: translateY(-60%);
-    left: 35%;
-    height: 200px;
-    width: 250px;
-    margin: 0 auto;
-    position: relative;
+    width: 100%;
   }
 }

@@ -1,16 +1,30 @@
 const containers = document.querySelectorAll(".container");
 const texts = document.querySelectorAll(".texts");
-const quest = document.getElementById("quest");
 
+const hideAll = () => {
+  texts.forEach((ans, index) => {
+    const answers = texts[index].lastElementChild;
+    answers.style.display = "none";
+    const quest = texts[index].firstElementChild;
+    quest.style.fontWeight = "300";
+  });
+};
+hideAll();
 containers.forEach((contain, index) => {
-  const accessP = texts[index].lastElementChild;
-  accessP.style.display = "none";
-  contain.addEventListener("click", () => {
-    quest.style.fontWeight = "700";
-    if (accessP.style.display === "none") {
-      accessP.style.display = "block";
+  const hiddenParagraph = texts[index].lastElementChild;
+  const quest = texts[index].firstElementChild;
+  contain.addEventListener("click", (event) => {
+    if (hiddenParagraph.style.display === "none") {
+      hideAll();
+      hiddenParagraph.style.display = "block";
+      if (hiddenParagraph.style.display === "block") {
+        quest.style.fontWeight = "700";
+      }
     } else {
-      accessP.style.display = "none";
+      hiddenParagraph.style.display = "none";
+      if ((hiddenParagraph.style.display = "none")) {
+        quest.style.fontWeight = "300";
+      }
     }
   });
 });
